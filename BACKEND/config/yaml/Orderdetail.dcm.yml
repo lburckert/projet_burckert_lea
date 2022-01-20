@@ -1,0 +1,42 @@
+Orderdetail:
+    type: entity
+    table: orderdetail
+    indexes:
+        IDX_27A0E7F2E1C1B809:
+            columns:
+                - orderheader_id
+        IDX_27A0E7F24584665A:
+            columns:
+                - product_id
+    id:
+        orderdetailId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: orderdetail_id
+            generator:
+                strategy: SEQUENCE
+    manyToOne:
+        orderheader:
+            targetEntity: Orderheader
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                orderheader_id:
+                    referencedColumnName: orderheader_id
+            orphanRemoval: false
+        product:
+            targetEntity: Product
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                product_id:
+                    referencedColumnName: product_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

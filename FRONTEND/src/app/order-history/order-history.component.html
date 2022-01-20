@@ -1,0 +1,23 @@
+<div class="container product">
+
+    <table class="table table-striped table-sm align-middle">
+        <thead>
+            <tr>
+            <th scope="col" class="text-center">Orderheader</th>
+            <th scope="col" class="text-center">Reference</th>
+            <th scope="col" class="text-center">Total quantity</th>
+            <th scope="col" class="text-center">Total price</th>
+            <th scope="col" class="text-center">Device</th>
+            <th scope="col" class="text-center">Order detail</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let orderheader of orderheaders$ | async">
+            <th scope="row" class="text-center">{{ orderheader.orderheader_id }}</th>
+            <td class="text-center">{{ orderheader.reference }}</td>
+            <td class="text-center">{{ orderheader.totalitemquantity }}</td>
+            <td class="text-center">{{ orderheader.totalprice }}</td>
+            <td class="text-center">{{ orderheader.devise }}</td>
+            <td class="text-center" ><button type="button" [routerLink]="['/order-history-detail/', orderheader.orderheader_id]" class="btn-detail"><img src="../assets/img/icon-market/left2.png" alt="add" class="go-detail-img"></button></td>
+        </tbody>
+    </table>
+

@@ -1,0 +1,70 @@
+Product:
+    type: entity
+    table: product
+    id:
+        productId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: product_id
+            generator:
+                strategy: SEQUENCE
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        logo:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        picture:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        shortdescription:
+            type: string
+            nullable: true
+            length: 390
+            options:
+                fixed: false
+        ean:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: false
+        pages:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        price:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        date:
+            type: date
+            nullable: true
+        brand:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        description:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

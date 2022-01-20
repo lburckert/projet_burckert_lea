@@ -1,0 +1,16 @@
+<div class="container recap">
+    <ul class="list-group list-group-flush">
+        <div *ngIf="currentUser$ | async as currentUser" class="flex flex-column gap-1 card">
+            <li class="list-group-item">Username : {{currentUser.account.username}}</li>
+            <li class="list-group-item">Firstname : {{currentUser.firstname}}</li>
+            <li class="list-group-item">Lastname : {{currentUser.lastname}}</li>
+            <li class="list-group-item">Civility : {{currentUser.civility}}</li>
+            <li class="list-group-item">Email : {{currentUser.email}}</li>
+            <li class="list-group-item">Phone : {{currentUser.phone}}</li>
+            <li class="list-group-item">Address : {{currentUser.address}}</li>
+            <li class="list-group-item">City : {{currentUser.city}}</li>
+            <li class="list-group-item">State : {{currentUser.state}}</li>
+            <li class="list-group-item">Zip : {{currentUser.zip}}</li>
+        </div>
+    </ul>
+</div>

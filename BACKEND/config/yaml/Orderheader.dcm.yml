@@ -1,0 +1,52 @@
+Orderheader:
+    type: entity
+    table: orderheader
+    indexes:
+        IDX_67D430A019EB6921:
+            columns:
+                - client_id
+    id:
+        orderheaderId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: orderheader_id
+            generator:
+                strategy: SEQUENCE
+    fields:
+        reference:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        totalprice:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        devise:
+            type: string
+            nullable: true
+            length: 5
+            options:
+                fixed: false
+        totalitemquantity:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+    manyToOne:
+        client:
+            targetEntity: Client
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                client_id:
+                    referencedColumnName: client_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
